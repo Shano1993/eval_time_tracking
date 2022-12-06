@@ -1,4 +1,4 @@
-import {allProjectArray, newProject} from "./app";
+import { newProject } from "./app";
 import { Task } from "./Task";
 
 const container: HTMLDivElement = document.getElementById("container") as HTMLDivElement;

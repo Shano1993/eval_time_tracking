@@ -1,5 +1,3 @@
-import {newProject} from "./app";
-
 export class Task {
     public addTask(divTask: HTMLDivElement) {
         const addTaskLink: HTMLAnchorElement = document.createElement("a") as HTMLAnchorElement;
