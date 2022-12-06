@@ -591,7 +591,6 @@ exports.Display = Display;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Project = void 0;
-const app_1 = __webpack_require__(/*! ./app */ "./assets/js/app.ts");
 const Display_1 = __webpack_require__(/*! ./Display */ "./assets/js/Display.ts");
 const addButtonProject = document.getElementById("addButton");
 const arrayProject = [];
@@ -603,16 +602,8 @@ class Project {
     addNewProject() {
         if (addButtonProject) {
             addButtonProject.addEventListener("click", () => {
-                if (localStorage.getItem("Project")) {
-                    let allArrayProject = JSON.parse(localStorage.getItem("Project"));
-                    allArrayProject.push(app_1.newProject);
-                    let newDisplay = new Display_1.Display();
-                    newDisplay.displayProject();
-                    localStorage.setItem("Project", JSON.stringify(allArrayProject));
-                }
-                else {
-                    localStorage.setItem("Project", JSON.stringify(arrayProject));
-                }
+                let newDisplay = new Display_1.Display();
+                newDisplay.displayProject();
             });
         }
     }
@@ -700,18 +691,11 @@ exports.Task = Task;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.allProjectArray = exports.newProject = void 0;
+exports.newProject = void 0;
 __webpack_require__(/*! ../styles/style.scss */ "./assets/styles/style.scss");
 const Project_1 = __webpack_require__(/*! ./Project */ "./assets/js/Project.ts");
-const Display_1 = __webpack_require__(/*! ./Display */ "./assets/js/Display.ts");
 exports.newProject = new Project_1.Project();
 exports.newProject.addNewProject();
-let allArrayProjectString = localStorage.getItem("Project");
-exports.allProjectArray = JSON.parse(allArrayProjectString);
-for (let i = 0; i < exports.allProjectArray.length; i++) {
-    let newDisplay = new Display_1.Display();
-    newDisplay.displayProject();
-}
 
 
 /***/ })

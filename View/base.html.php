@@ -11,21 +11,19 @@
 </head>
 <body>
 
-    <div id="header">
-        <h1>Time Tracking</h1>
-        <div>
-            <label for="title"></label>
-            <input type="text" id="title" placeholder="Titre du projet">
+<div id="header">
+    <h1>Time Tracking</h1>
+    <div>
+        <label for="title"></label>
+        <input type="text" id="title" placeholder="Titre du projet">
 
-            <label for="addButton"></label>
-            <input type="submit" id="addButton" value="Ajouter un projet">
-        </div>
+        <label for="addButton"></label>
+        <input type="submit" id="addButton" value="Ajouter un projet">
     </div>
+</div>
 
-    <div id="container"></div>
+<div id="container"></div>
 
-    <script src="/build/js/front-bundle.js"></script>
+<script src="/build/js/front-bundle.js"></script>
 </body>
 </html>
-
-
