@@ -3,7 +3,7 @@
 namespace App\Routing;
 
 use App\Controller\AbstractController;
-use ErrorController;
+use App\Controller\ErrorController;
 
 abstract class AbstractRouter
 {

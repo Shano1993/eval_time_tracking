@@ -1,9 +1,18 @@
 <?php
 
+require_once '../vendor/autoload.php';
+
+use RedBeanPHP\R;
+use App\Controller\ErrorController;
 use App\Routing\AbstractRouter;
 use App\Routing\HomeRouter;
+use App\Routing\UserRouter;
+use Symfony\Component\ErrorHandler\Debug;
 
-require '../src/index.php';
+Debug::enable();
+
+R::setup('mysql:host=localhost;dbname=time_tracking', 'root', '');
+
 require __DIR__ . '/../includes.php';
 session_start();
 
@@ -14,10 +23,11 @@ switch ($page) {
     case 'home':
         HomeRouter::route($method);
         break;
+    case 'user':
+        UserRouter::route($method);
+        break;
     default:
         (new ErrorController())->error404($page);
 }
-
-?>
 
 

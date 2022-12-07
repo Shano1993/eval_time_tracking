@@ -11,19 +11,16 @@
 </head>
 <body>
 
-<div id="header">
-    <h1>Time Tracking</h1>
-    <div>
-        <label for="title"></label>
-        <input type="text" id="title" placeholder="Titre du projet">
-
-        <label for="addButton"></label>
-        <input type="submit" id="addButton" value="Ajouter un projet">
+<div id="connect">
+    <a href="/index.php?c=home" id="title">Time Tracking</a>
+    <div id="formConnect">
+        <a href="/index.php?c=user&a=connection" id="connection">Connexion</a>
+        <a href="/index.php?c=user&a=inscription" id="inscription">Inscription</a>
     </div>
 </div>
 
-<div id="container"></div>
+<div><?= $html ?></div>
 
-<script src="/build/js/front-bundle.js"></script>
+    <script src="/build/js/front-bundle.js"></script>
 </body>
 </html>
