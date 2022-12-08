@@ -12,10 +12,16 @@
 <body>
 
 <div id="connect">
-    <a href="/index.php?c=home" id="title">Time Tracking</a>
-    <div id="formConnect">
-        <a href="/index.php?c=user&a=connection" id="connection">Connexion</a>
-        <a href="/index.php?c=user&a=inscription" id="inscription">Inscription</a>
+    <a href="/index.php?c=home" id="title">Time Tracking 🙄</a>
+    <div id="formConnect"> <?php
+        if (empty($_SESSION['user'])) { ?>
+            <a href="/index.php?c=user&a=connection" id="connection">Connexion 🔒</a>
+            <a href="/index.php?c=user&a=inscription" id="inscription">Inscription 📝</a> <?php
+        }
+        else { ?>
+            <a href="/index.php?c=user&a=profile" id="profile">Profil <?= $_SESSION['user']->username ?></a>
+            <a href="/index.php?c=user&a=logout" id="logout">Deconnexion</a> <?php
+        } ?>
     </div>
 </div>
 

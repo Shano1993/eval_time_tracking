@@ -8,16 +8,42 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #F9F9F9;
+}
+
 html {
   font-size: 62.5%;
   font-family: vars.$font-kanit;
 }
 
-.success {
+#divRequired {
+
+  #required {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 2rem;
+    color: red;
+
+    span {
+      font-size: 5rem;
+    }
+  }
+}
+
+#success {
   text-align: center;
   padding: 1rem;
   font-size: 2rem;
   background-color: forestgreen;
+  color: #F9F9F9;
+}
+
+#error {
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: indianred;
   color: #F9F9F9;
 }
 
@@ -43,7 +69,7 @@ h1 {
 }
 
 #connect {
-  border: 0.1rem solid black;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -57,19 +83,19 @@ h1 {
   #formConnect {
     padding: 1.5rem 3rem;
 
-    #connection,  #inscription {
+    #connection,  #inscription, #profile, #logout {
       padding: 0.5rem 2.5rem;
       font-size: 1.5rem;
       text-decoration-line: none;
       border-radius: 1rem;
     }
 
-    #connection {
+    #connection, #profile {
       background-color: rgba(0, 80, 255, 0.7);
       color: #F9F9F9;
     }
 
-    #inscription {
+    #inscription, #logout {
       background-color: #ff3838;
       color: #F9F9F9;
     }

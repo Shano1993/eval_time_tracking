@@ -11,12 +11,12 @@
 
     <form action="/index.php?c=user&a=connection" method="post" id="formConnection">
         <div>
-            <label for="username"></label>
-            <input type="text" id="username" placeholder="Nom d'utilisateur">
+            <label for="mail"></label>
+            <input type="email" id="mail" name="mail" placeholder="Votre email">
         </div>
         <div>
             <label for="password"></label>
-            <input type="password" id="password" placeholder="Mot de passe">
+            <input type="password" id="password" name="password" placeholder="Mot de passe">
         </div>
 
         <input type="submit" name="save" value="Connexion">

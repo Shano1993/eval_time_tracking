@@ -11,15 +11,22 @@
 </head>
 <body>
 
-<div id="header">
+<?php
+    if (!empty($_SESSION['user'])) { ?>
+    <div id="header">
+        <div>
+            <label for="title"></label>
+            <input type="text" id="title" placeholder="Titre du projet">
 
-    <div>
-        <label for="title"></label>
-        <input type="text" id="title" placeholder="Titre du projet">
-
-        <label for="addButton"></label>
-        <input type="submit" id="addButton" value="Ajouter un projet">
+            <label for="addButton"></label>
+            <input type="submit" id="addButton" value="Ajouter un projet">
+        </div>
     </div>
-</div>
 
-<div id="container"></div>
+    <div id="container"></div> <?php
+    }
+    else { ?>
+        <div id="divRequired">
+            <p id="required">Veuillez vous connecter pour utiliser l'application <span>😂</span></p>
+        </div> <?php
+    }
