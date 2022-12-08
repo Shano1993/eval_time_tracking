@@ -14,6 +14,9 @@ class HomeRouter extends AbstractRouter
             case 'index':
                 $controller->index();
                 break;
+            case 'create-project':
+                $controller->createProject();
+                break;
             default:
                 (new ErrorController())->error404($action);
         }

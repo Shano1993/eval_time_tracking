@@ -1,7 +1,6 @@
 import { newProject } from "./app";
 import { Task } from "./Task";
 
-const container: HTMLDivElement = document.getElementById("container") as HTMLDivElement;
 const inputTitle: HTMLInputElement = document.getElementById("title") as HTMLInputElement;
 
 export class Display {
@@ -37,7 +36,7 @@ export class Display {
         let newTask = new Task();
         newTask.addTask(divTask);
 
-        container.append(divProject);
+        document.body.append(divProject);
         divProject.append(deleteProject);
         this.displayTitle(divProject);
         divProject.append(divTask);

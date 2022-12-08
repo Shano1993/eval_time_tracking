@@ -12,14 +12,17 @@
 <body>
 
 <?php
-    if (!empty($_SESSION['user'])) { ?>
+
+if (!empty($_SESSION['user'])) { ?>
     <div id="header">
         <div>
-            <label for="title"></label>
-            <input type="text" id="title" placeholder="Titre du projet">
+            <form action="/index.php?c=home&a=create-project" method="post">
+                <label for="title"></label>
+                <input type="text" id="title" name="title" placeholder="Titre du projet">
 
-            <label for="addButton"></label>
-            <input type="submit" id="addButton" value="Ajouter un projet">
+                <label for="save"></label>
+                <input type="submit" id="addButton" name="save" value="Ajouter un projet">
+            </form>
         </div>
     </div>
 
@@ -27,6 +30,8 @@
     }
     else { ?>
         <div id="divRequired">
-            <p id="required">Veuillez vous connecter pour utiliser l'application <span>😂</span></p>
+            <p id="required">Veuillez vous connecter pour utiliser l'application ! <span>😂</span></p>
         </div> <?php
     }
+
+

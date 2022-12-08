@@ -9,7 +9,7 @@
 <body>
     <h1>Inscription</h1>
 
-    <form action="/index.php?c=user&a=Inscription" method="post" id="formInscription">
+    <form action="/index.php?c=user&a=inscription" method="post" id="formInscription">
         <div>
             <label for="mail"></label>
             <input type="email" name="mail" id="mail" placeholder="Votre email">
