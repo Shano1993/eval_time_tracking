@@ -170,6 +170,21 @@ h1 {
       flex-direction: column;
       padding: 1.5rem;
 
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        input[type=text] {
+          padding: 0.5rem 2rem;
+          width: 70%;
+        }
+
+        input[type=submit] {
+          padding: 0 2rem;
+        }
+      }
+
       .divTimerTask {
         display: flex;
         flex-wrap: wrap;

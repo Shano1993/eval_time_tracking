@@ -13,6 +13,10 @@
 
 <?php
 
+use App\Controller\HomeController;
+
+dump(!empty($_SESSION['user']->id));
+
 if (!empty($_SESSION['user'])) { ?>
     <div id="header">
         <div>
@@ -24,14 +28,19 @@ if (!empty($_SESSION['user'])) { ?>
                 <input type="submit" id="addButton" name="save" value="Ajouter un projet">
             </form>
         </div>
-    </div>
-
-    <div id="container"></div> <?php
+    </div> <?php
     }
     else { ?>
         <div id="divRequired">
             <p id="required">Veuillez vous connecter pour utiliser l'application ! <span>😂</span></p>
         </div> <?php
-    }
+    } ?>
+
+<div id="container"> <?php
+    if (!empty($_SESSION['user'])) {
+        HomeController::readProject();
+    } ?>
+</div>
+
 
 
