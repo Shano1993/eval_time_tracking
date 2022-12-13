@@ -13,10 +13,6 @@
 
 <?php
 
-use App\Controller\HomeController;
-
-dump(!empty($_SESSION['user']->id));
-
 if (!empty($_SESSION['user'])) { ?>
     <div id="header">
         <div>
@@ -29,18 +25,41 @@ if (!empty($_SESSION['user'])) { ?>
             </form>
         </div>
     </div> <?php
-    }
-    else { ?>
-        <div id="divRequired">
-            <p id="required">Veuillez vous connecter pour utiliser l'application ! <span>😂</span></p>
-        </div> <?php
-    } ?>
+} else { ?>
+    <div id="divRequired">
+        <p id="required">Veuillez vous connecter pour utiliser l'application ! <span>😂</span></p>
+    </div> <?php
+} ?>
 
-<div id="container"> <?php
-    if (!empty($_SESSION['user'])) {
-        HomeController::readProject();
+<div id="container">
+    <?php
+foreach ($_SESSION['user']->ownProjectList as $project) { ?>
+    <div class="project">
+        <i class="fa fa-trash time"></i>
+        <h2><?= $project->title . " ID = " . $project->id ?></h2>
+        <div class="task">
+            <form action="/index.php?c=home&a=create-task&id=<?= $project->id ?>" method="post">
+                <input type="text" name="taskName" id="taskName">
+                <input type="submit" name="save" value="+ Ajouter une tâche">
+            </form>
+        </div>
+        <div class="divView">
+            <div class="divRightLeft">
+                <i class="fa fa-calendar time"></i>
+                <span class="Date Time">Date Time</span>
+            </div>
+            <div class="divRightLeft">
+                <i class="fa fa-clock-o time"></i>
+                <span class="Total Time">Total Time</span>
+            </div>
+        </div>
+    </div> <?php
     } ?>
 </div>
+
+
+
+
 
 
 
